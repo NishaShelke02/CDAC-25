@@ -1,0 +1,278 @@
+mysql> CREATE table SEMP(
+    -> EMPNO CHAR(4),
+    -> EMPNAME CHAR(20),
+    -> BASIC FLOAT,
+    -> DEPTNO CHAR(2),
+    -> DEPTHEAD CHAR(4));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> show tables;
++--------------------+
+| Tables_in_homework |
++--------------------+
+| semp               |
++--------------------+
+1 row in set (0.01 sec)
+------------------------------------------------------------------
+
+mysql> CREATE TABLE SDEPT (DEPTNO CHAR(2),DEPTNAME CHAR(15));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SHOW TABLES;
++--------------------+
+| Tables_in_homework |
++--------------------+
+| sdept              |
+| semp               |
++--------------------+
+2 rows in set (0.00 sec)
+------------------------------------------------------------------
+
+mysql> INSERT INTO `SDEPT` VALUES
+    -> (10,'Development');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO `SDEPT` VALUES(20,'Training');
+Query OK, 1 row affected (0.00 sec)
+------------------------------------------------------------------------
+mysql> Insert INTO SEMP (EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)
+    -> VALUE('0001','SUNIT',6000,'10',NULL);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> Insert INTO SEMP (EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)
+    -> VALUE('0002','HIREN',8000,'20',NULL);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> Insert INTO SEMP (EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)
+    -> VALUES ('0003', 'ALI', 4000, '10', '0001');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> Insert INTO SEMP (EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)
+    -> VALUES ('0004', 'GEORGE', 6000, '20', '0002');
+Query OK, 1 row affected (0.00 sec)
+
+
+mysql> SELECT * FROM SEMP;
++-------+---------+-------+--------+----------+
+| EMPNO | EMPNAME | BASIC | DEPTNO | DEPTHEAD |
++-------+---------+-------+--------+----------+
+| 0001  | SUNIT   |  6000 | 10     | NULL     |
+| 0002  | HIREN   |  8000 | 20     | NULL     |
+| 0003  | ALI     |  4000 | 10     | 0001     |
+| 0004  | GEORGE  |  6000 | 20     | 0002     |
++-------+---------+-------+--------+----------+
+4 rows in set (0.00 sec)
+
+-------------------------------------------------------------------------
+mysql> CREATE TABLE S (
+    -> `S#` CHAR(2) PRIMARY KEY,
+    -> Sname VARCHAR(20),
+    -> Status INT,
+    -> City VARCHAR(20));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> INSERT INTO  S VALUES
+    -> ('S1','Nisha',10,'London'),
+    -> ('S2', 'Vaibhav', 20, 'London'),
+    -> ('S4', 'Johnson', 30, 'New York'),
+    -> ('S3', 'Trishant', 20, 'New York'),
+    -> ('S5', 'Shiv', 10, 'Paris'),
+    -> ('S6','Mayur', 20, 'Paris'),
+    -> ('S7', 'Sanjay', 30, 'Athens'),
+    -> ('S8', 'Suvira', 30, 'Athens');
+Query OK, 8 rows affected (0.00 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+-------------------------------------------------------------------------
+mysql> CREATE TABLE P (
+    -> `P#` CHAR(2) PRIMARY KEY,
+    -> Pname VARCHAR(20),
+    -> color VARCHAR(10),
+    ->  Weight FLOAT,
+    -> City VARCHAR(20));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> INSERT INTO  P VALUES
+    ->  ('P1', 'Rectangle', 'Red', 5.0, 'New York'),
+    -> ('P2','Polygon', 'Brown', 4.2, 'Paris'),
+    -> ('P3', 'Rodney', 'Green', 4.23, 'Athens'),
+    -> ('P4', 'Jerry', 'Grey', 2.23, 'London'),
+    -> ('P5', 'Triangle', 'Royal Blue', 25.61, 'London'),
+    -> ('P6', 'Tomri', 'White', 14.20, 'Paris'),
+    -> ('P8', 'Squareto', 'Teal', 50.3, 'New York');
+Query OK, 7 rows affected (0.00 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+---------------------------------------------------------------------------
+
+mysql> CREATE TABLE J (
+    -> `J#` CHAR(2) PRIMARY KEY,
+    -> Jname VARCHAR(20),
+    -> City VARCHAR(20));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> INSERT INTO  J VALUES
+    -> (1, 'alpha' , 'Athens'),
+    -> (2, 'beta' , 'Athens'),
+    -> (3, 'Omega' , 'New York'),
+    -> (4, 'Theta', 'New York'),
+    -> (5, 'Gamma', 'Paris'),
+    -> (6, 'Phi', 'London')
+    -> ;
+Query OK, 6 rows affected (0.00 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+---------------------------------------------------------------------------
+mysql> CREATE TABLE SPL (
+    -> `S#` CHAR(2),
+    -> `P#` CHAR(2),
+    -> `J#` CHAR(2),
+    -> Qty INT,
+    -> PRIMARY KEY (`S#`, `P#`, `J#`),
+    -> FOREIGN KEY (`P#`) REFERENCES P(`P#`),
+    -> FOREIGN KEY (`J#`) REFERENCES J(`J#`),
+    -> FOREIGN KEY (`S#`) REFERENCES S(`S#`));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> SELECT * FROM S;
+Empty set (0.00 sec)
+
+mysql> INSERT INTO SPJ VALUES
+    -> ('S1', 'P5' , 'J6', 45),
+    -> ('S2', 'P4' , 'J6', 45),
+    -> ('S3', 'P1' , 'J3', 15),
+    -> ('S4', 'P8' , 'J4', 165),
+    ->  ('S5', 'P2' , 'J5', 652),
+    -> ('S6', 'P2' , 'J5', 27),
+    -> ('S7', 'P3' , 'J1', 227),
+    -> ('S8', 'P3' , 'J2', 2527);
+Query OK, 8 rows affected (0.00 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+----------------------------------------------------------------------
+mysql> SELECT * FROM S;
++----+----------+--------+----------+
+| S# | Sname    | Status | City     |
++----+----------+--------+----------+
+| S1 | Nisha    |     10 | London   |
+| S2 | Vaibhav  |     20 | London   |
+| S3 | Trishant |     20 | New York |
+| S4 | Johnson  |     30 | New York |
+| S5 | Shiv     |     10 | Paris    |
+| S6 | Mayur    |     20 | Paris    |
+| S7 | Sanjay   |     30 | Athens   |
+| S8 | Suvira   |     30 | Athens   |
++----+----------+--------+----------+
+8 rows in set (0.00 sec)
+----------------------------------------------------------------------
+mysql> SELECT `S#`,SNAME FROM S;
++----+----------+
+| S# | SNAME    |
++----+----------+
+| S1 | Nisha    |
+| S2 | Vaibhav  |
+| S3 | Trishant |
+| S4 | Johnson  |
+| S5 | Shiv     |
+| S6 | Mayur    |
+| S7 | Sanjay   |
+| S8 | Suvira   |
++----+----------+
+8 rows in set (0.00 sec)
+
+-----------------------------------------------------------------------
+mysql> SELECT PNAME, COLOR FROM P WHERE CITY='LONDON';
++----------+------------+
+| PNAME    | COLOR      |
++----------+------------+
+| Jerry    | Grey       |
+| Triangle | Royal Blue |
++----------+------------+
+2 rows in set (0.00 sec)
+----------------------------------------------------------------------
+mysql> SELECT `Sname` FROM S WHERE City='London';
++---------+
+| Sname   |
++---------+
+| Nisha   |
+| Vaibhav |
++---------+
+2 rows in set (0.00 sec)
+--------------------------------------------------------------------------
+mysql> SELECT `Sname` FROM S WHERE City='Athens' OR City='Paris';
++--------+
+| Sname  |
++--------+
+| Shiv   |
+| Mayur  |
+| Sanjay |
+| Suvira |
++--------+
+4 rows in set (0.00 sec)
+--------------------------------------------------------------------------
+mysql> SELECT * FROM J WHERE `City` = 'Athens';
++----+-------+--------+
+| J# | Jname | City   |
++----+-------+--------+
+| 1  | alpha | Athens |
+| 2  | beta  | Athens |
++----+-------+--------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT `Pname` FROM P WHERE Weight>=12 AND Weight<=14;
+Empty set (0.00 sec)
+---------------------------------------------------------------------------
+mysql> SELECT * FROM S WHERE Status>=20;
++----+----------+--------+----------+
+| S# | Sname    | Status | City     |
++----+----------+--------+----------+
+| S2 | Vaibhav  |     20 | London   |
+| S3 | Trishant |     20 | New York |
+| S4 | Johnson  |     30 | New York |
+| S6 | Mayur    |     20 | Paris    |
+| S7 | Sanjay   |     30 | Athens   |
+| S8 | Suvira   |     30 | Athens   |
++----+----------+--------+----------+
+6 rows in set (0.00 sec)
+----------------------------------------------------------------------------
+mysql> SELECT * FROM S WHERE City <> 'London';
++----+----------+--------+----------+
+| S# | Sname    | Status | City     |
++----+----------+--------+----------+
+| S3 | Trishant |     20 | New York |
+| S4 | Johnson  |     30 | New York |
+| S5 | Shiv     |     10 | Paris    |
+| S6 | Mayur    |     20 | Paris    |
+| S7 | Sanjay   |     30 | Athens   |
+| S8 | Suvira   |     30 | Athens   |
++----+----------+--------+----------+
+6 rows in set (0.00 sec)
+-------------------------------------------------------------------------------
+mysql>  SELECT DISTINCT City FROM S;
++----------+
+| City     |
++----------+
+| London   |
+| New York |
+| Paris    |
+| Athens   |
++----------+
+4 rows in set (0.00 sec)
+---------------------------------------------------------------------------------------------------------
+mysql> SELECT `WEIGHT`*1000 AS `MILLIGRAM`, `WEIGHT`/1000 AS `KILOGRAM` FROM `P`;
++--------------------+-----------------------+
+| MILLIGRAM          | KILOGRAM              |
++--------------------+-----------------------+
+|               5000 |                 0.005 |
+|  4199.999809265137 |  0.004199999809265137 |
+|  4230.000019073486 |  0.004230000019073486 |
+| 2230.0000190734863 | 0.0022300000190734865 |
+| 25610.000610351562 |  0.025610000610351562 |
+| 14199.999809265137 |  0.014199999809265137 |
+|  50299.99923706055 |   0.05029999923706055 |
++--------------------+-----------------------+
+7 rows in set (0.00 sec)
+
+
+
+
