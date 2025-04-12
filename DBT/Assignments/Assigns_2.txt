@@ -1,0 +1,23 @@
+
+Assignment –2
+
+ 1) Which field of the Customers table is the primary key? 
+
+Ans -->
+Primary key is something which is unique for each row in CUSTOMERS table Cnum that is customer number is unique with respect to row hence in given table “Cnum” is the primary key;
+
+
+2) What is the 4th column of the Customers table?
+Ans-->
+'Rating' is the 4th column of Customers table.
+
+
+Q3] What is another word for row?  For column? 
+Ans-->
+In a relational database, a row is called a tuple or records, and the column is called an attribute or field.
+
+
+4) Why isn’t it possible to see the first five
+rows of a table?
+Ans-->
+because while saving the rows they are fragmented internally and given space on database hard disk where-ever the space is available and in case we update certain row through char or varchar that time length of row might get increased so that if space is not available then the whole row is moved to the place where the space is available. Hence position of row is not fixed that’s why we can’t see the first five rows of table on surely basis.
