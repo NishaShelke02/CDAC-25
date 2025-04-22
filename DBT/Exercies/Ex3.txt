@@ -1,0 +1,174 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| homework           |
+| information_schema |
+| performance_schema |
++--------------------+
+3 rows in set (0.01 sec)
+
+mysql> use homework;
+Database changed
+-----------------------------------------------------------------------------------
+1. Display all the Supplier names with the initial letter capital.  
+
+mysql> SELECT upper(Substring(Sname,1,1)) FROM S;
++-----------------------------+
+| upper(Substring(Sname,1,1)) |
++-----------------------------+
+| N                           |
+| V                           |
+| T                           |
+| J                           |
+| S                           |
+| M                           |
+| S                           |
+| S                           |
++-----------------------------+
+8 rows in set (0.02 sec)
+
+-----------------------------------------------------------------------------------
+
+2. Display all the Supplier names in upper case.   
+
+mysql> SELECT upper(Sname) FROM S;
++--------------+
+| upper(Sname) |
++--------------+
+| NISHA        |
+| VAIBHAV      |
+| TRISHANT     |
+| JOHNSON      |
+| SHIV         |
+| MAYUR        |
+| SANJAY       |
+| SUVIRA       |
++--------------+
+8 rows in set (0.00 sec)
+
+----------------------------------------------------------------------------------
+
+3. Display all the Supplier names in lower case.   
+
+mysql> SELECT lower(Sname) FROM S;
++--------------+
+| lower(Sname) |
++--------------+
+| nisha        |
+| vaibhav      |
+| trishant     |
+| johnson      |
+| shiv         |
+| mayur        |
+| sanjay       |
+| suvira       |
++--------------+
+8 rows in set (0.00 sec)
+
+----------------------------------------------------------------------------------
+4. Display all the Supplier names padded to 25 characters, with spaces on the left.   
+
+mysql> SELECT LPAD(Sname, 25, ' ') AS `LPAD DEMO` FROM S;
++---------------------------+
+| LPAD DEMO                 |
++---------------------------+
+|                     Nisha |
+|                   Vaibhav |
+|                  Trishant |
+|                   Johnson |
+|                      Shiv |
+|                     Mayur |
+|                    Sanjay |
+|                    Suvira |
++---------------------------+
+8 rows in set (0.00 sec)
+
+----------------------------------------------------------------------------------
+5. Display all the Supplier names (with ‘la’ replaced by ‘ro’).     
+HINT: REPLACE.  
+mysql> SELECT replace(Sname, 'la', 'ro') FROM S;
++----------------------------+
+| replace(Sname, 'la', 'ro') |
++----------------------------+
+| Nisha                      |
+| Vaibhav                    |
+| Trishant                   |
+| Johnson                    |
+| Shiv                       |
+| Mayur                      |
+| Sanjay                     |
+| Suvira                     |
++----------------------------+
+8 rows in set (0.00 sec)
+
+--------------------------------------------------------------------------------
+6. Implement the above command such that ‘l’ is replaced with ‘r’ and ‘a’ is replaced 
+with ‘o’.  
+mysql> SELECT replace(replace(`sname`, 'l','r'),'a', 'o') AS RESULT FROM S;
++----------+
+| RESULT   |
++----------+
+| Nisho    |
+| Voibhov  |
+| Trishont |
+| Johnson  |
+| Shiv     |
+| Moyur    |
+| Sonjoy   |
+| Suviro   |
++----------+
+8 rows in set (0.00 sec)
+
+----------------------------------------------------------------------------------
+7. Display the Supplier names and the lengths of the names.   
+
+mysql> SELECT SNAME, LENGTH(SNAME) AS `LENGTH` FROM S;
++----------+--------+
+| SNAME    | LENGTH |
++----------+--------+
+| Nisha    |      5 |
+| Vaibhav  |      7 |
+| Trishant |      8 |
+| Johnson  |      7 |
+| Shiv     |      4 |
+| Mayur    |      5 |
+| Sanjay   |      6 |
+| Suvira   |      6 |
++----------+--------+
+8 rows in set (0.00 sec)
+-----------------------------------------------------------------------------------
+8. Use the soundex function to search for a supplier by the name of ‘BLOKE’.   
+
+mysql> SELECT SNAME FROM S WHERE SOUNDEX(Sname) = SOUNDEX('BLOOK');
+Empty set (0.00 sec)
+
+----------------------------------------------------------------------------------
+9. Display the Supplier name and the status (as Ten, Twenty, Thirty, etc.).  
+
+mysql> SELECT SNAME, REPLACE(REPLACE(REPLACE( Status,10, 'Ten'), 20, 'Twenty'),30, 'Thirty') AS STATUS FROM S;
++----------+--------+
+| SNAME    | STATUS |
++----------+--------+
+| Nisha    | Ten    |
+| Vaibhav  | Twenty |
+| Trishant | Twenty |
+| Johnson  | Thirty |
+| Shiv     | Ten    |
+| Mayur    | Twenty |
+| Sanjay   | Thirty |
+| Suvira   | Thirty |
++----------+--------+
+8 rows in set (0.00 sec)
+
+-----------------------------------------------------------------------------------
+
+10. Display the current day (e.g. Thursday).  
+
+mysql> SELECT DAYNAME(SYSDATE()) AS DAYNAME FROM DUAL;
++---------+
+| DAYNAME |
++---------+
+| Sunday  |
++---------+
+1 row in set (0.02 sec)
