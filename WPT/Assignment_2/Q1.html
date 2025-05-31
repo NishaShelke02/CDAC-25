@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WPT Assignment_2 Que 1</title>
+    <style>
+        button{
+            margin-top: 20px;
+            background-color: pink;
+            color: black;
+            cursor: pointer;
+            
+        }
+    </style>
+</head>
+<body>
+    <p id="text">
+        It is rightly said that being disciplined is essential in life. When a person leads a disciplined life, they set an easy path to success. They will develop an approach to happiness and a beautiful future ahead.
+        Being disciplined is the practice of having a scheduled daily routine which helps an individual to be punctual and hard-working. An individual is taught what being disciplined means from the time they are young.
+        Even though discipline takes a lot of effort, the advantages of a disciplined life make it a worthwhile endeavour
+    </p>
+    <button type="button" >Submit</button>
+    <script>
+        document.querySelector('button').addEventListener('click', function() {
+        const text = document.getElementById('text');
+        text.style.color = 'green';   
+        text.style.fontSize = '24px';
+        text.style.fontFamily = 'cursive'; 
+    });
+
+
+    </script>
+</body>
+</html>

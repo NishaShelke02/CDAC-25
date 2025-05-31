@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Event Management</title>
+    <link rel="stylesheet" href="event.css">
+
+
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">🏆 SportEvent</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#register">Register</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <h1>Grand Sports Tournament 2025</h1>
+    <p>Organize, Manage & Celebrate the Spirit of Sports!</p>
+</section>
+
+<section id="register" class="form-section">
+    <h2>Register Your Event</h2>
+    <form id="eventForm">
+        <input type="text" id="eventName" placeholder="Event Name" required>
+        <input type="text" id="eventLocation" placeholder="Event Location" required>
+        <input type="text" id="team1" placeholder="Team 1 Name" required>
+        
+        <input type="text" id="team2" placeholder="Team 2 Name" required>
+        <input type="date" id="eventDate" required>
+        <input type="time" id="eventTime" required>
+        <button type="submit">Schedule Event</button>
+        <button type="reset">Reset</button>
+
+        <div id="message"></div>
+
+    </form>
+</section>
+
+<section id="events" class="events-section">
+    <h2>Scheduled Events</h2>
+    <table id="scheduleTable">
+        <caption>Upcoming Sports Events</caption>
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Location</th>
+                <th>Team 1</th>
+                <th>Team 2</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+</section>
+
+<footer id="contact">
+    <h2>Contact Us</h2>
+    <p>For inquiries, please reach out to us:</p>
+    <p>🏢 Address: 123 Sport Lane, Cityville, ST 12345</p>
+    <p>📞 Phone: 9699379795</p>
+    <p>✉️ Email: <a href="mailto:nisha220@gmail.com">nisha220@gmail.com</a></p>
+
+                
+    <p>&copy; 2025 Sport Event Management | All Rights Reserved</p>
+    <p>Follow us on:
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>,
+        <a href="https://www.twitter.com" target="_blank">Twitter</a>,
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    </p>
+    
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

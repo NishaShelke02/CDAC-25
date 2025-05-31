@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In - PU Stone</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      background: url('pustone1.jpg') no-repeat center center/cover;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .left-panel, .right-panel {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left-panel {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .left-panel h1 {
+      font-size: 3rem;
+    }
+
+    .right-panel {
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 400px;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: white;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .input-field {
+      margin-bottom: 20px;
+    }
+
+    .input-field input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    .login-box input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #4a54e1;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .login-box input[type="submit"]:hover {
+      background-color: #363fc0;
+    }
+
+    .forgot-password {
+      display: block;
+      text-align: right;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+      text-decoration: none;
+    }
+
+    .forgot-password:hover {
+      text-decoration: underline;
+    }
+
+    .bottom-link {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .bottom-link a {
+      color: #4a54e1;
+      text-decoration: none;
+    }
+
+    .bottom-link a:hover {
+      text-decoration: underline;
+    }
+
+    
+
+    .left-panel, .right-panel {
+        flex: none;
+        width: 100%;
+        height: 50vh;
+    }
+
+    .left-panel h1 {
+        font-size: 2rem;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <h1>Welcome to Prashan PU Stone</h1>
+    </div>
+    <div class="right-panel">
+      <div class="login-box">
+        <h2>Sign In</h2>
+        <form action="#">
+          <div class="input-field">
+            <input type="text" name="username" placeholder="Username or Email" required />
+          </div>
+          <div class="input-field">
+            <input type="password" name="password" placeholder="Password" required />
+          </div>
+          <input type="submit" value="Login" />
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </form>
+        <div class="bottom-link">
+          Don't have an account? <a href="#">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

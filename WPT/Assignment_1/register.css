@@ -1,0 +1,62 @@
+* {
+	box-sizing:border-box;
+}
+body, html {
+	font-family: sans-serif;
+	background: linear-gradient(pink,#FFAB40);
+}
+.main-panel {
+	width: 100%;
+	max-width:700px;
+	margin: 20px auto;
+	background: #C8E6C9 ;
+	padding:20px 10px 50px 10px;
+	border-radius:30px;
+    box-shadow: 0 0 18px;
+    
+}
+h1 {
+	font-size: 35px;
+	text-align: center;
+	margin:0px;
+    
+}
+.row {
+	display:flex;
+}
+.form-group {
+	margin-top:15px;
+	padding: 10px;
+	flex-direction: column;
+	display: flex;
+	width: 100%;
+    
+}
+input, select {
+	width:100%;
+	padding:10px;
+	height:40px;
+	border:2px solid black;
+	border-radius:10px;
+	font-size: 16px;
+	margin-top:5px;
+}
+input[type="radio"], input[type="checkbox"] {
+	width: 17px;
+	height:17px;
+	margin-left:5px;
+	position:relative;
+	top:2px;
+}
+button {
+	border:none;
+	width:50%;
+	height:40px;
+	font-size:20px;
+	cursor:pointer;
+	margin-top:40px;
+	border-radius:15px;
+	background: #EF9A9A;
+	color: black solid 30px;
+    
+}

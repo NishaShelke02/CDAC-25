@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+        body{
+            background: linear-gradient(to bottom,#ff0000,#00ff00);
+            margin: 0;
+        }
+
+        #login-form-container{
+            background-color: white;
+            width: 450px;
+            height: 500px;
+            margin-bottom: 20px;
+            text-align: center;
+            margin: 130px auto;
+            border-radius: 30px;
+            box-shadow:0px 0px 15px 
+
+
+        }
+        input{
+            width: 60%;
+            margin-bottom: 10px;
+            padding-top: 12px;
+            padding-bottom: 10px;
+        }
+        h2{
+            padding-top: 15px;
+        }
+        #login-btn{
+            color: aquamarine;
+            border-radius: 20px;
+            background-color: blueviolet;
+            border: 0cap;
+            cursor: pointer;
+            transition: background 0.4s;
+
+        }
+        #login-btn:hover{
+            background: red;
+            border-style: solid;
+            color: aliceblue;
+
+        }
+        .form-field{
+            border-top-width: 0px;
+            border-right-width: 0px;
+            border-left-width: 0px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="login-form-container">
+        <h2>LOGIN</h2>
+        <form>
+            <div><input type="text" placeholder="Enter Username" class="form-field"></div>
+            <div><input type="password" placeholder="Enter password" class="form-field"></div><br>
+            <div><input type="submit" id="login-btn" value="Login"></div>
+        
+        </form>
+        <p>Need Account?<a href="#">Sign up</a></p>
+    </div>
+</body>
+</html>
